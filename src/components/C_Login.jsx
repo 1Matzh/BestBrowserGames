@@ -32,7 +32,7 @@ const Login = () => {
                     path: "/",
                 });
                 // redirect user to the auth page
-                window.location.href = "/games";
+                window.location.href = "/home";
             })
             .catch((error) => {
                 error = new Error();

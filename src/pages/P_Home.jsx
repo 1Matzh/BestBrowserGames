@@ -6,13 +6,13 @@ const cookies = new Cookies();
 import AddCategory from "../components/C_AddCategory";
 
 
-export default function P_Games() {
+export default function P_Home() {
   // logout
   const logout = () => {
     // destroy the cookie
     cookies.remove("token", { path: "/" });
     // redirect user to the landing page
-    window.location.href = "/login";
+    window.location.href = "/";
   }
 
   return (
