@@ -1,7 +1,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import C_Register from "../components/C_Register";
 
-function P_Login() {
+function P_Register() {
   return (
     <Container>
       <Row>
@@ -13,4 +13,4 @@ function P_Login() {
   );
 }
 
-export default P_Login;
+export default P_Register;
