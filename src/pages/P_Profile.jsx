@@ -1,4 +1,3 @@
-// P_Perfil.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
@@ -6,7 +5,7 @@ import { jwtDecode } from "jwt-decode";
 
 import InputField from "../components/C_InputField";
 
-const P_Perfil = () => {
+const P_Profile = () => {
   const cookies = new Cookies();
   const token = cookies.get("token");
 
@@ -48,8 +47,6 @@ const P_Perfil = () => {
   };
 
   const handleSaveClick = () => {
-    // Implement the save logic here
-    // This might include the PUT API call to update user information
     axios.put(`https://bestbrowsergamesapi--1matzh.repl.co/users/${user._id}`, user, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -79,4 +76,4 @@ const P_Perfil = () => {
   );
 };
 
-export default P_Perfil;
+export default P_Profile;
