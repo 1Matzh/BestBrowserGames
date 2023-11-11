@@ -2,6 +2,9 @@ import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const Header = () => {
     const logout = () => {
@@ -15,14 +18,16 @@ const Header = () => {
         <div className="header">
             <h1>BestBrowserGames</h1>
 
-            
-            <Link to="/profile">
+            <div className="header-right">
             {/* logout */}
             <Button type="submit" variant="danger" onClick={() => logout()}>
                 Logout
             </Button>
+
+            <Link to="/profile">
                 <FaUserCircle className="profile-icon" />
             </Link>
+            </div>
         </div>
     );
 };
