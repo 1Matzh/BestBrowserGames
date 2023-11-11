@@ -1,13 +1,58 @@
+/* GameCard */
 .game-card {
   background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: .25rem;
   padding: 1rem;
   margin: 0.5rem;
-  width: 400px;
 }
 
-.justify-content-around {
-  justify-content: flex-start !important;
+/* Home */
+.game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* CategoryFilter */
+.category-filter {
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+  padding: .2rem;
+  margin: 0.5rem;
+}
+
+/* GameCards */
+.carousel-control-next {
+  right: -100px;
+}
+
+.carousel-control-prev {
+  left: -100px;
+}
+
+
+.carousel-control-next span,
+.carousel-control-prev span {
+  filter: invert(100%);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c5c5c;
+  color: #fbfbfb;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-icon {
+  font-size: 40px;
+  color: #fbfbfb;
+  cursor: pointer;
+  margin-left: 1rem;
 }

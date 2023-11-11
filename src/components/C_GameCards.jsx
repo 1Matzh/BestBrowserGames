@@ -1,12 +1,12 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import C_GameCard from './C_GameCard';
+import React from "react";
+import { Carousel } from "react-bootstrap";
+import C_GameCard from "./C_GameCard";
 
-const GameCards = ({ games }) => {
+const C_GameCards = ({ games, numberOfCards }) => {
   const getGameGroups = () => {
     const gameGroups = [];
-    for (let i = 0; i < games.length; i += 5) {
-      const group = games.slice(i, i + 5);
+    for (let i = 0; i < games.length; i += numberOfCards) {
+      const group = games.slice(i, i + numberOfCards);
       gameGroups.push(group);
     }
     return gameGroups;
@@ -29,4 +29,4 @@ const GameCards = ({ games }) => {
   );
 };
 
-export default GameCards;
+export default C_GameCards;

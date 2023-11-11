@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Carousel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Cookies from "universal-cookie";
 import axios from "axios";
-const cookies = new Cookies();
-
 import C_CategoryFilter from "../components/C_CategoryFilter";
 import C_GameCards from "../components/C_GameCards";
-import C_GameCard from "../components/C_GameCard";
+import Header from "../components/C_Header";
+
+const cookies = new Cookies();
 
 export default function P_Home() {
   const token = cookies.get("token");
@@ -33,36 +33,21 @@ export default function P_Home() {
     ? games.filter(game => game.category.name === filteredCategory)
     : games;
 
-  // logout
-  const logout = () => {
-    // destroy the cookie
-    cookies.remove("token", { path: "/" });
-    // redirect user to the landing page
-    window.location.href = "/";
-  }
-
   return (
     <div className="context">
-      <h1>BestBrowserGames</h1>
+      <Header />
 
-      <h2>Jogos Novos</h2>
-      <C_GameCards games={games} />
+      <div className="game-container">
+        <h2>Jogos Novos</h2>
+        <C_GameCards games={games} numberOfCards={5} />
+      </div>
 
-      <h2>Jogos por Categoria</h2>
-      <C_CategoryFilter onCategoryChange={handleCategoryChange} />
 
-      <Carousel>
-        {filteredGames.map(game => (
-          <Carousel.Item key={game._id}>
-            <C_GameCard game={game} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-
-      {/* logout */}
-      <Button type="submit" variant="danger" onClick={() => logout()}>
-        Logout
-      </Button>
+      <div className="game-container">
+        <h2>Jogos por Categoria</h2>
+        <C_CategoryFilter onCategoryChange={handleCategoryChange} />
+        <C_GameCards games={filteredGames} numberOfCards={3} />
+      </div>
     </div>
   );
 }

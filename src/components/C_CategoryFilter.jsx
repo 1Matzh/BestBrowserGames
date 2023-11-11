@@ -23,7 +23,7 @@ const CategoryFilter = ({ onCategoryChange }) => {
 
   return (
     <div>
-      <select value={selectedCategory} onChange={handleCategoryChange}>
+      <select className='category-filter' value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">Todas as categorias</option>
         {categories.map(category => (
           <option key={category._id} value={category.name}>{category.name}</option>
