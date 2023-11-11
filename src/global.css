@@ -56,3 +56,38 @@
   cursor: pointer;
   margin-left: 1rem;
 }
+
+/* InputField */
+.input-field {
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  border-radius: .25rem;
+  padding: .7rem;
+  margin: 0.5rem 0;
+}
+
+.profile-container {
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: .7rem;
+  margin: 0.5rem;
+}
+
+.input-field svg {
+  color: #5c5c5c;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.input-field label {
+  border-bottom: 1px solid #9c9c9c;
+}
+
+.edit-input {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  color: rgb(0, 0, 0);
+  border-radius: .25rem;
+  margin: 0.5rem 0;
+  padding: 0rem .5rem;
+}
