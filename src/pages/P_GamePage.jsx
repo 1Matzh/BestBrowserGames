@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import C_GameRating from "../components/C_GameRating";
+import C_GameReviews from "../components/C_GameReviews";
 
 const P_GamePage = () => {
   const { gameId } = useParams();
@@ -25,6 +27,10 @@ const P_GamePage = () => {
     <div>
       <h2>{game.name}</h2>
       <p>{game.description}</p>
+      
+      <C_GameRating gameId={gameId} />
+
+      <C_GameReviews gameId={gameId} />
     </div>
   );
 };
