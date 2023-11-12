@@ -40,30 +40,30 @@ const Login = () => {
     }
 
     return (
-        <>
+        <div className="login-container">
             <h2>Login</h2>
             <Form onSubmit={(e) => handleSubmit(e)}>
                 {/* email */}
                 <Form.Group controlId="formLogin_Email">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                         type="email"
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter email"
+                        placeholder="Insira o seu endereço de email"
                     />
                 </Form.Group>
 
                 {/* password */}
                 <Form.Group controlId="formLogin_Password">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Senha</Form.Label>
                     <Form.Control
                         type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
+                        placeholder="Insira a sua senha"
                     />
                 </Form.Group>
 
@@ -73,20 +73,20 @@ const Login = () => {
                     type="submit"
                     onClick={(e) => handleSubmit(e)}
                 >
-                    Login
+                    Entrar
                 </Button>
 
                 {/* display success message */}
                 {login ? (
-                    <p className="text-success">You Are Logged in Successfully</p>
+                    <p className="text-success">Login efetuado com sucesso</p>
                 ) : (
-                    <p className="text-danger">You Are Not Logged in</p>
+                    <p className="text-danger"></p>
                 )}
 
                 {/* register link */}
-                <p>Don't have an account? <a href="/register">Register</a></p>
+                <p>Não tem uma conta? <a href="/register">Registre-se</a></p>
             </Form>
-        </>
+        </div>
     )
 }
 

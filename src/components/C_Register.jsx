@@ -43,90 +43,90 @@ const Register = () => {
         }
 
     return (
-        <>
-            <h2>Register</h2>
+        <div className="register-container">
+            <h2>Registre-se</h2>
             {/* password */}
             <Form.Group controlId="formRegister_Name">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Nome</Form.Label>
                     <Form.Control
-                        type="name"
+                        type="text"
                         name="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Your name"
+                        placeholder="Insira o seu nome"
                     />
                 </Form.Group>
 
             <Form onSubmit={(e) => handleSubmit(e)}>
                 {/* email */}
                 <Form.Group controlId="formRegister_Email">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                         type="email"
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter email"
+                        placeholder="Insira o seu endereço de email"
                     />
                 </Form.Group>
 
                 {/* password */}
                 <Form.Group controlId="formRegister_Password">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Senha</Form.Label>
                     <Form.Control
                         type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
+                        placeholder="Insira a sua senha"
                     />
                 </Form.Group>
 
                 {/* confirm-password */}
                 <Form.Group controlId="formRegister_ConfirmPassword">
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label>Confirme sua senha</Form.Label>
                     <Form.Control
-                        type="confirmPassword"
+                        type="password"
                         name="confirmPassword"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        placeholder="Confirm your password"
+                        placeholder="Insira a sua senha novamente"
                     />
                 </Form.Group>
 
                 {/* confirm-password */}
                 <Form.Group controlId="formRegister_BirthDate">
-                    <Form.Label>Date of Birth</Form.Label>
+                    <Form.Label>Data de nascimento</Form.Label>
                     <Form.Control
                         type="date"
                         name="birthDate"
                         value={birthDate}
                         onChange={(e) => setBirthDate(e.target.value)}
-                        placeholder="Enter your date of birth"
+                        placeholder="Insira a sua data de nascimento"
                     />
                 </Form.Group>
 
                 {/* country */}
                 <Form.Group controlId="formRegister_Country">
-                    <Form.Label>Country</Form.Label>
+                    <Form.Label>País</Form.Label>
                     <Form.Control
-                        type="country"
+                        type="text"
                         name="country"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
-                        placeholder="Enter your country"
+                        placeholder="Insira o seu país"
                     />
                 </Form.Group>
 
                 {/* state */}
                 <Form.Group controlId="formRegister_State">
-                    <Form.Label>State</Form.Label>
+                    <Form.Label>Estado</Form.Label>
                     <Form.Control
-                        type="state"
+                        type="text"
                         name="state"
                         value={state}
                         onChange={(e) => setState(e.target.value)}
-                        placeholder="Enter your state"
+                        placeholder="Insira o seu estado"
                     />
                 </Form.Group>
 
@@ -136,20 +136,20 @@ const Register = () => {
                     type="submit"
                     onClick={(e) => handleSubmit(e)}
                 >
-                    Register
+                    Registre-se
                 </Button>
 
                 {/* display success message */}
                 {register ? (
-                    <p className="text-success">You Are Registered Successfully</p>
+                    <p className="text-success">Você foi registrado com sucesso</p>
                 ) : (
-                    <p className="text-danger">You Are Not Registered</p>
+                    <p className="text-danger"></p>
                 )}
 
                 {/* login link */}
-                <p>Already have an account? <a href="/">Login</a></p>
+                <p>Ja tem uma conta? <a href="/">Login</a></p>
             </Form>
-        </>
+        </div>
     )
 }
 
