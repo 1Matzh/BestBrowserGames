@@ -55,7 +55,7 @@ const GameRating = ({ gameId }) => {
   };
 
   return (
-    <div>
+    <div className="rating-container">
       <h3>Avaliação</h3>
       <div>
         {[1, 2, 3, 4, 5].map((star) => (
@@ -67,12 +67,12 @@ const GameRating = ({ gameId }) => {
           />
         ))}
       </div>
-      <textarea
+      <textarea className="rating-description"
         placeholder="Digite sua avaliação..."
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button onClick={handleSaveRating}>Salvar Avaliação</button>
+      <button className="btn btn-primary" onClick={handleSaveRating}>Salvar Avaliação</button>
     </div>
   );
 };

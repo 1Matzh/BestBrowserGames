@@ -91,3 +91,62 @@
   margin: 0.5rem 0;
   padding: 0rem .5rem;
 }
+
+/* GamePage */
+.game-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GameRating */
+.rating-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: 1rem;
+}
+
+.rating-description {
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: .7rem;
+  margin: 0.5rem;
+  width: 20rem;
+}
+
+/* GameReviews */
+.reviews-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: 1rem;
+}
+
+.review-item {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: .7rem;
+  margin: 0.5rem;
+}
+
+.review-items {
+  padding: .7rem;
+  margin: 0.5rem;
+}
+
+.review-item button {
+  margin-top: 0.5rem;
+}

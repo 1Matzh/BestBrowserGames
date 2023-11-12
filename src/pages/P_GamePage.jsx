@@ -23,7 +23,7 @@ const P_GamePage = () => {
   }
 
   return (
-    <div>
+    <div className="game-page">
       <h2>{game.name}</h2>
       <p>{game.description}</p>
       

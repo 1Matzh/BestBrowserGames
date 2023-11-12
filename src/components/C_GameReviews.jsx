@@ -43,11 +43,11 @@ const GameReviews = ({ gameId }) => {
       const isCurrentUserReview = loggedInUserId === review.user._id;
 
       return (
-        <div key={review._id}>
+        <div className="review-item" key={review._id}>
           <strong>{review.user.name}</strong> - Nota: {review.score}/5<br />
           {review.description}<br />
           {isCurrentUserReview && (
-            <button onClick={() => handleEditReview(review._id)}>Editar</button>
+            <button className="btn btn-primary" onClick={() => handleEditReview(review._id)}>Editar</button>
           )}
         </div>
       );
@@ -55,12 +55,12 @@ const GameReviews = ({ gameId }) => {
   };
 
   return (
-    <div>
+    <div className="reviews-container">
       <h3>Avaliações dos Usuários</h3>
       {reviews.length === 0 ? (
         <p>Nenhuma avaliação disponível.</p>
       ) : (
-        <ul>
+        <ul className="review-items">
           {reviews.map(renderReview)}
         </ul>
       )}

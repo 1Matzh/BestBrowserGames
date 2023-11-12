@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const GameCard = ({ game }) => {
-  
+
   return (
     <Link to={`/games/${game._id}`} style={{ textDecoration: 'none' }}>
       <div className="card game-card">
