@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Cookies from "universal-cookie";
 import axios from "axios";
 import C_CategoryFilter from "../components/C_CategoryFilter";
 import C_GameCards from "../components/C_GameCards";
 import Header from "../components/C_Header";
 
-const cookies = new Cookies();
-
 export default function P_Home() {
-  const token = cookies.get("token");
-  console.log(token);
-
   const [games, setGames] = useState([]);
   const [filteredCategory, setFilteredCategory] = useState('');
 

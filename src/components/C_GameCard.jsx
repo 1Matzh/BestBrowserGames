@@ -10,6 +10,7 @@ const GameCard = ({ game }) => {
         <div className="card-body">
           <h5 className="card-title">{game.name}</h5>
           <p className="card-text">{game.description}</p>
+          <p className="card-text">Categoria: {game.category.name}</p>
           <a href={game.url} className="btn btn-primary">Jogar Agora</a>
         </div>
       </div>
