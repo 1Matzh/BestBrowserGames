@@ -4,7 +4,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import { jwtDecode } from "jwt-decode";
 
-const GameRating = ({ gameId }) => {
+const C_GameRating = ({ gameId }) => {
   const cookies = new Cookies();
   const token = cookies.get("token");
 
@@ -24,13 +24,11 @@ const GameRating = ({ gameId }) => {
   };
 
   const handleSaveRating = () => {
-    // Verifique se o usuário está autenticado
     if (!token || !userId) {
       console.error("Usuário não autenticado. Não é possível enviar a avaliação.");
       return;
     }
 
-    // Crie o objeto de avaliação
     const ratingData = {
       score: rating,
       description,
@@ -38,7 +36,6 @@ const GameRating = ({ gameId }) => {
       user: userId,
     };
 
-    // Envie a avaliação para a API
     axios.post("https://bestbrowsergamesapi--1matzh.repl.co/ratings", ratingData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -77,4 +74,4 @@ const GameRating = ({ gameId }) => {
   );
 };
 
-export default GameRating;
+export default C_GameRating

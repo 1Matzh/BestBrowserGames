@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const CategoryFilter = ({ onCategoryChange }) => {
+const C_CategoryFilter = ({ onCategoryChange }) => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -33,4 +33,4 @@ const CategoryFilter = ({ onCategoryChange }) => {
   );
 };
 
-export default CategoryFilter;
+export default C_CategoryFilter

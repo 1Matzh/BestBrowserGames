@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
 
-const Register = () => {
+const C_Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,10 +15,8 @@ const Register = () => {
     const [register, setRegister] = useState(false);
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
 
-        // set configurations
         const configuration = {
             method: "post",
             url: "https://bestbrowsergamesapi--1matzh.repl.co/users",
@@ -32,7 +30,7 @@ const Register = () => {
                 state
             },
         };
-        // make the API call
+
         axios(configuration)
             .then(() => {
                 setRegister(true);
@@ -153,5 +151,5 @@ const Register = () => {
     )
 }
 
-export default Register
+export default C_Register
 

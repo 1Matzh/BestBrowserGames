@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-const EditReview = ({ review, onUpdate }) => {
+const C_EditReview = ({ review, onUpdate }) => {
   const cookies = new Cookies();
   const token = cookies.get("token");
 
@@ -59,4 +59,4 @@ const EditReview = ({ review, onUpdate }) => {
   );
 };
 
-export default EditReview;
+export default C_EditReview

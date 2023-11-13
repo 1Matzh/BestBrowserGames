@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import C_GameRating from "../components/C_GameRating";
 import C_GameReviews from "../components/C_GameReviews";
+import C_Header from "../components/C_Header";
 
 const P_GamePage = () => {
   const { gameId } = useParams();
@@ -23,13 +24,17 @@ const P_GamePage = () => {
   }
 
   return (
-    <div className="game-page">
-      <h2>{game.name}</h2>
-      <p>{game.description}</p>
-      
-      <C_GameRating gameId={gameId} />
+    <div>
+      <C_Header />
 
-      <C_GameReviews gameId={gameId} />
+      <div className="game-page">
+        <h2>{game.name}</h2>
+        <p>{game.description}</p>
+
+        <C_GameRating gameId={gameId} />
+
+        <C_GameReviews gameId={gameId} />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const GameCard = ({ game }) => {
+const C_GameCard = ({ game }) => {
 
   return (
     <Link to={`/games/${game._id}`} style={{ textDecoration: 'none' }}>
@@ -18,4 +18,4 @@ const GameCard = ({ game }) => {
   );
 };
 
-export default GameCard;
+export default C_GameCard

@@ -24,7 +24,7 @@ const P_Profile = () => {
     if (token) {
       const decodedToken = jwtDecode(token);
       console.log(decodedToken);
-      
+
       setUser({
         _id: decodedToken.id,
         name: decodedToken.name,
@@ -37,9 +37,8 @@ const P_Profile = () => {
       });
     }
   }, [token]);
-  
+
   const handleFieldChange = (fieldName, fieldValue) => {
-    // Always set the confirmPassword to the password value
     setUser((prevUser) => ({
       ...prevUser,
       [fieldName]: fieldValue,
@@ -52,14 +51,14 @@ const P_Profile = () => {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then(response => {
-      console.log("User details saved successfully:", response.data);
-    })
-    .catch(error => {
-      console.error("Error saving user details:", error.response.data);
-    });
+      .then(response => {
+        console.log("User details saved successfully:", response.data);
+      })
+      .catch(error => {
+        console.error("Error saving user details:", error.response.data);
+      });
   };
-  
+
   return (
     <div className="profile-container">
       <h2>Perfil do Usuário</h2>
@@ -72,6 +71,11 @@ const P_Profile = () => {
       <InputField label="Estado" value={user.state} onChange={(value) => handleFieldChange("state", value)} />
 
       <button className="btn btn-primary " onClick={handleSaveClick}>Salvar</button>
+      <button
+        className="btn btn-secondary"
+        onClick={() => window.history.back()}>
+        Voltar
+      </button>
     </div>
   );
 };

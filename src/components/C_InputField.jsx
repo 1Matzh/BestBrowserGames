@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaEdit, FaSave, FaTimes } from "react-icons/fa";
 
-const InputField = ({ label, value, onChange }) => {
+const C_InputField = ({ label, value, onChange }) => {
     const [isEditing, setEditing] = useState(false);
     const [editedValue, setEditedValue] = useState(value);
 
@@ -42,4 +42,4 @@ const InputField = ({ label, value, onChange }) => {
     );
 };
 
-export default InputField;
+export default C_InputField

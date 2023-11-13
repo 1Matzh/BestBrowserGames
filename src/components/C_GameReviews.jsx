@@ -1,11 +1,10 @@
-// GameReviews.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import C_EditReview from "./C_EditReview";
 import Cookies from "universal-cookie";
 import { jwtDecode } from "jwt-decode";
 
-const GameReviews = ({ gameId }) => {
+const C_GameReviews = ({ gameId }) => {
   const [reviews, setReviews] = useState([]);
   const [editingReviewId, setEditingReviewId] = useState(null);
 
@@ -68,5 +67,5 @@ const GameReviews = ({ gameId }) => {
   );
 };
 
-export default GameReviews;
+export default C_GameReviews
 

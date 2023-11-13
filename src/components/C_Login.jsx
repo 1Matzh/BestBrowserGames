@@ -5,16 +5,14 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
-const Login = () => {
+const C_Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState(false);
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
 
-        // set configurations
         const configuration = {
             method: "post",
             url: "https://bestbrowsergamesapi--1matzh.repl.co/users/login",
@@ -23,15 +21,13 @@ const Login = () => {
                 password
             },
         };
-        // make the API call
+
         axios(configuration)
             .then((result) => {
                 setLogin(true);
-                // set the cookie
                 cookies.set("token", result.data.token, {
                     path: "/",
                 });
-                // redirect user to the auth page
                 window.location.href = "/home";
             })
             .catch((error) => {
@@ -90,4 +86,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default C_Login
