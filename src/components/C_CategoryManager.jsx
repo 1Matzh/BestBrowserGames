@@ -111,7 +111,7 @@ const C_CategoryManagement = () => {
     };
 
     return (
-        <div>
+        <div className="category-container">
             <h2><strong>[ADMIN]</strong> Gerenciamento de Categorias</h2>
             <div className="add-category">
                 <h3>Adicionar Nova Categoria</h3>

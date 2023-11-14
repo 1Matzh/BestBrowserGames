@@ -125,13 +125,6 @@
   margin: .5rem;
 }
 
-.category-container {
-  border: 1px solid #dee2e6;
-  border-radius: .25rem;
-  padding: .7rem;
-  margin: 0.5rem;
-}
-
 /* GamePage */
 .game-page {
   display: flex;
@@ -226,6 +219,13 @@
 }
 
 /* CategoryManager */
+.category-container {
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: .7rem;
+  margin: 0.5rem;
+}
+
 .add-category {
   display: flex;
   justify-content: center;

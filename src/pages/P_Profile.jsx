@@ -81,9 +81,7 @@ const P_Profile = () => {
 
       </div>
 
-      <div className="category-container">
         {userRoles.includes("admin") && <C_CategoryManager />}
-      </div>
     </div>
   );
 };
