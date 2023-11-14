@@ -3,11 +3,13 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import { jwtDecode } from "jwt-decode";
 
-import InputField from "../components/C_InputField";
+import C_InputField from "../components/C_InputField";
+import C_CategoryManager from "../components/C_CategoryManager";
 
 const P_Profile = () => {
   const cookies = new Cookies();
   const token = cookies.get("token");
+  const userRoles = cookies.get("token") ? jwtDecode(cookies.get("token")).roles : [];
 
   const [user, setUser] = useState({
     _id: "",
@@ -23,7 +25,6 @@ const P_Profile = () => {
   useEffect(() => {
     if (token) {
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
 
       setUser({
         _id: decodedToken.id,
@@ -60,22 +61,29 @@ const P_Profile = () => {
   };
 
   return (
-    <div className="profile-container">
-      <h2>Perfil do Usuário</h2>
-      <InputField label="Name" value={user.name} onChange={(value) => handleFieldChange("name", value)} />
-      <InputField label="Email" value={user.email} onChange={(value) => handleFieldChange("email", value)} />
-      <InputField label="Password" value={user.password} onChange={(value) => handleFieldChange("password", value)} />
-      <InputField label="Confirm Password" value={user.confirmPassword} onChange={(value) => handleFieldChange("confirmPassword", value)} />
-      <InputField label="Data de Nascimento" value={user.birthDate} onChange={(value) => handleFieldChange("birthDate", value)} />
-      <InputField label="País" value={user.country} onChange={(value) => handleFieldChange("country", value)} />
-      <InputField label="Estado" value={user.state} onChange={(value) => handleFieldChange("state", value)} />
+    <div>
+      <div className="profile-container">
+        <h2>Perfil do Usuário</h2>
+        <C_InputField label="Name" value={user.name} onChange={(value) => handleFieldChange("name", value)} />
+        <C_InputField label="Email" value={user.email} onChange={(value) => handleFieldChange("email", value)} />
+        <C_InputField label="Password" value={user.password} onChange={(value) => handleFieldChange("password", value)} />
+        <C_InputField label="Confirm Password" value={user.confirmPassword} onChange={(value) => handleFieldChange("confirmPassword", value)} />
+        <C_InputField label="Data de Nascimento" value={user.birthDate} onChange={(value) => handleFieldChange("birthDate", value)} />
+        <C_InputField label="País" value={user.country} onChange={(value) => handleFieldChange("country", value)} />
+        <C_InputField label="Estado" value={user.state} onChange={(value) => handleFieldChange("state", value)} />
 
-      <button className="btn btn-primary " onClick={handleSaveClick}>Salvar</button>
-      <button
-        className="btn btn-secondary"
-        onClick={() => window.history.back()}>
-        Voltar
-      </button>
+        <button className="btn btn-primary " onClick={handleSaveClick}>Salvar</button>
+        <button
+          className="btn btn-secondary"
+          onClick={() => window.history.back()}>
+          Voltar
+        </button>
+
+      </div>
+
+      <div className="category-container">
+        {userRoles.includes("admin") && <C_CategoryManager />}
+      </div>
     </div>
   );
 };
